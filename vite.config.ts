@@ -11,11 +11,10 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist', // Ensure the build output directory is 'dist'
-    emptyOutDir: true, // Clear the output directory before building
+    outDir: 'dist', // Ensure this is where the build outputs static files
   },
   server: {
-    host: true, // Allows the server to listen on all IPs, useful for Railway
-    port: process.env.PORT || 5173, // Use the Railway-provided PORT or fallback to 5173
+    port: process.env.PORT || 5173, // Use the Railway-assigned port
+    host: '0.0.0.0', // Ensure the server listens on all IPs
   },
 });
